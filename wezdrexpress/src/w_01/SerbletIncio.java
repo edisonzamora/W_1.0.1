@@ -9,7 +9,6 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 public class SerbletIncio implements Servlet{
-
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
