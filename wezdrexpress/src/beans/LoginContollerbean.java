@@ -22,5 +22,4 @@ public class LoginContollerbean {
 		return "loginView";
 		
 	}
-
 }
