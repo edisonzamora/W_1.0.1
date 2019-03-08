@@ -8,11 +8,23 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+
+
+
+
+
 public class SerbletIncio implements Servlet{
+	
+	final Logger logger = LoggerFactory.getLogger(SerbletIncio.class);
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
-		
+		logger.debug("DESTROY");
+	
 	}
 
 	@Override
@@ -31,7 +43,7 @@ public class SerbletIncio implements Servlet{
 	public void init(ServletConfig arg0) throws ServletException {
 		// TODO Auto-generated method stub
 		String s=arg0.getInitParameter("edison");
-		System.out.println("iniciado servlet"+s);
+		logger.debug("INIT  PARAM="+s);
 	}
 
 	@Override
