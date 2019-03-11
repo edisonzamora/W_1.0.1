@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+	<composite:interface>
+		<composite:attribute name="correoNameLabel" />
+		<composite:attribute name="passNameLabel" />
+		<composite:attribute name="botonNameLabel" />
+		<composite:attribute name="correoValue" />
+		<composite:attribute name="passValue" />
+		<composite:attribute name="botonAction"
+			method-signature="java.lang.String aceptar()" />
+	</composite:interface>
+
+	<composite:implementation>
+		<h:form>
+			<h:panelGrid columns="2" id="loginPanel">
+            #{cc.attrs.correoNameLabel} : 
+            <h:inputText id="correo" value="#{cc.attrs.correoValue}" />
+            #{cc.attrs.passNameLabel} : 
+            <h:inputSecret id="password" value="#{cc.attrs.passValue}" />
+			</h:panelGrid>
+			<h:commandButton action="#{cc.attrs.botonAction}"
+				value="#{cc.attrs.botonNameLabel}" />
+		</h:form>
+	</composite:implementation>
+</ui:component>
