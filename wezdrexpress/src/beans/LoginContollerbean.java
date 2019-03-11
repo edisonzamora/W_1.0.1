@@ -1,20 +1,32 @@
 package beans;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
+import java.util.Locale;
 
-@ManagedBean(name="loginContoller")
-@SessionScoped
-public class LoginContollerbean {
+import javax.faces.context.FacesContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+
+//@ManagedBean(name="loginContoller")
+//@SessionScoped
+@Component("loginContollerbean")
+@Scope("session")
+public class LoginContollerbean implements Serializable {
 	
-	@ManagedProperty(value="#{loginBean}")
+	private static final long serialVersionUID = 1L;
+	//@ManagedProperty(value="#{loginBean}")
+	@Autowired
 	private LoginBean login;
 
 	public String aceptar(){
 		if(login!=null){
-			
-			if(!login.getCorreo().equals("") ||!login.getPassword().equals("")){
+		FacesContext ctx=FacesContext.getCurrentInstance();
+		Locale locale=ctx.getExternalContext().getRequestLocale();
+		
+			if(!login.getCorreo().equals("") && login.getPassword().equals("")){
 				
 				return "homeView?faces-redirect=true";
 			}

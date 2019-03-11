@@ -11,7 +11,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/rxp-context.xml</param-value>
+		<param-value>classpath:/WEB-INF/rxp-context.xml</param-value>
 	</context-param>
 	<!-- Listeners -->
 	<listener>
@@ -35,16 +35,11 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-
 	<servlet>
-		<servlet-name>Inicio</servlet-name>
-		<servlet-class>w_01.SerbletIncio</servlet-class>
-		<init-param>
-			<param-name>edison</param-name>
-			<param-value>saludos</param-value>
-		</init-param>
+		<servlet-name>Prueba</servlet-name>
+		<servlet-class>w_01.ServletPrueba</servlet-class>
 		<load-on-startup>2</load-on-startup>
-	</servlet>
+	</servlet> 
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>

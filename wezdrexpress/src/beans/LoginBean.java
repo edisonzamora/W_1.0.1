@@ -1,11 +1,17 @@
 package beans;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
 
-@ManagedBean(name="loginBean" , eager=true)
-@SessionScoped
-public class LoginBean {
+
+import org.springframework.stereotype.Component;
+
+//@ManagedBean(name="loginBean" , eager=true)
+//@SessionScoped
+
+@Component
+public class LoginBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private String correo;
 	

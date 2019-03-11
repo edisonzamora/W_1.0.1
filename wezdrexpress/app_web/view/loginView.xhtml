@@ -4,7 +4,6 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui"
 	xmlns:rpx="http://java.sun.com/jsf/composite/componentes">
 <head>
 <title>#{build.TITULO_APP}</title>
@@ -15,8 +14,8 @@
     <rpx:barraComponet labelTitulo="Login" colorText="" colorBar="#7EB4F7" />
 	<rpx:loginComponet passNameLabel="#{build.label_password}"
 		correoNameLabel="#{build.label_correo}"
-		botonNameLabel="#{build.btn_login}" correoValue="#{loginBean.correo}"
-		passValue="#{loginBean.password}"
-		botonAction="#{loginContoller.aceptar}" />
+		botonNameLabel="#{build.btn_login}" correoValue="#{loginContollerbean.login.correo}"
+		passValue="#{loginContollerbean.login.password}"
+		botonAction="#{loginContollerbean.aceptar}" />
 </body>
 </html>
