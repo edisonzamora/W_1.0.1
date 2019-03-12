@@ -20,10 +20,10 @@ public class ConfigHibernate implements Servlet {
 	private SessionFactory sessionFactory;
 	@Override
 	public void init(ServletConfig arg0) throws ServletException {
-		LOG.info("Inciado Hibernate Persistencia--> getSessionFactory()");
+		LOG.info(">>Inciado Hibernate Persistencia--> getSessionFactory()");
 		try {
 			this.sessionFactory = new Configuration().configure().buildSessionFactory();
-			LOG.info("Inciado Hibernate Persistencia--> getSessionFactory()");
+			LOG.info(">> Inicializacion correcta Hibernate Persistencia--> getSessionFactory()");
 		} catch (HibernateException he) {
 			LOG.error("Ocurrió un error en la inicialización de la SessionFactory: " + he);
 			throw new ExceptionInInitializerError(he);
