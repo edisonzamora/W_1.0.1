@@ -26,7 +26,7 @@ public class LoginContollerbean implements Serializable {
 		FacesContext ctx=FacesContext.getCurrentInstance();
 		Locale locale=ctx.getExternalContext().getRequestLocale();
 		
-			if(!login.getCorreo().equals("") && login.getPassword().equals("")){
+			if(!login.getCorreo().equals("") && !login.getPassword().equals("")){
 				
 				return "homeView?faces-redirect=true";
 			}

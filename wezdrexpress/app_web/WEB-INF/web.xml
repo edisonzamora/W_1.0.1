@@ -13,12 +13,17 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/WEB-INF/rxp-context.xml</param-value>
 	</context-param>
+	<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>WEB-INF/faces-config.xml</param-value>
+	</context-param>
 	<!-- Listeners -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- <listener> <listener-class>com.sun.faces.config.ConfigureListener</listener-class> 
-		</listener> -->
+	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener>
 	<!-- <listener> <listener-class>com.sun.faces.application.WebappLifecycleListener</listener-class> 
 		</listener> -->
 	<!-- servlets -->
@@ -26,6 +31,11 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>Hibernate</servlet-name>
+		<servlet-class>com.rexpress.config.hibernate.persistence.ConfigHibernate</servlet-class>
+		<load-on-startup>2</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
@@ -38,8 +48,16 @@
 	<servlet>
 		<servlet-name>Prueba</servlet-name>
 		<servlet-class>w_01.ServletPrueba</servlet-class>
-		<load-on-startup>2</load-on-startup>
-	</servlet> 
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/view/errors/500.xhtml</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/view/errors/404.xhtml</location>
+	</error-page>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
