@@ -4,14 +4,17 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 
 //@ManagedBean(name="loginContoller")
 //@SessionScoped
+@Controller
 @Component("loginContollerbean")
 @Scope("session")
 public class LoginContollerbean implements Serializable {
