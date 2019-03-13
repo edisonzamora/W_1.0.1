@@ -8,7 +8,7 @@
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
-		<class>entity.Usuario</class>
+		<class>com.rexpress.entity.Usuario</class>
 		
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
