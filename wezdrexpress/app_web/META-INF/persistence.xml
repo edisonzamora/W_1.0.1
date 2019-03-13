@@ -4,32 +4,20 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
                         http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-	<persistence-unit name="Persistence-rexpres" transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>entity.Usuario</class>
-		<!-- <properties> <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" 
-			/> <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/rexpress_d" 
-			/> <property name="hibernate.connection.username" value="root" /> <property 
-			name="hibernate.connection.password" value="" /> <property name="hibernate.dialect" 
-			value="org.hibernate.dialect.MySQL5Dialect"></property> <property name="show_sql" 
-			value="true"></property> <property name="hbm2ddl.auto" value=""></property> 
-			</properties> -->
-		<properties>
-			<!-- The JDBC driver of your database -->
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<!-- The JDBC URL to the database instance -->
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/rexpress_d" />
-			<!-- The database username -->
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<!-- The database password -->
-			<property name="javax.persistence.jdbc.password" value="" />
-			
-			<property name="hibernate.show_sql" value="true" />
-			
-			<property name="hibernate.hbm2ddl.auto" value="" />
-			
-			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+	<persistence-unit name="peristence-rex">
 
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+		<class>entity.Usuario</class>
+		
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/rexpress_d" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
 		</properties>
+		
 	</persistence-unit>
 </persistence>

@@ -1,4 +1,4 @@
-package w_01;
+package com.rexpress.w_01;
 
 import java.io.IOException;
 
