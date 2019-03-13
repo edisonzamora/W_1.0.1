@@ -1,4 +1,4 @@
-package entity;
+package com.rexpress.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

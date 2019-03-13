@@ -1,4 +1,4 @@
-package beans;
+package com.rexpress.beans;
 
 import java.io.Serializable;
 import java.util.Locale;
