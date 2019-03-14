@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceUnit;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -22,19 +24,23 @@ import org.hibernate.cfg.Configuration;
 public class ConfigPersistence implements Servlet {
 	private static final Logger LOG = Logger.getLogger(ConfigPersistence.class);
 	
-	@PersistenceUnit(unitName="peristence-rex")
-	private static  EntityManagerFactory emf;
+//	@PersistenceUnit(unitName="peristence-rex")
+//	private static  EntityManagerFactory emf;
+//	@PersistenceContext(unitName="peristence-rex")
+//	private static EntityManager ent;
 
 	@Override
 	public void init(ServletConfig arg0) throws ServletException {
-		
+		String s=new String();
+	
 		try {
-			emf.createEntityManager();
-			EntityManager em=emf.createEntityManager();
-			LOG.info(">> Concction test correcta Persistencia");
+//		Object o=	ent.getDelegate();
+//			//EntityManager em=emf.createEntityManager();
+//			EntityManagerFactory emf=Persistence.createEntityManagerFactory("peristence-rex");
+//			EntityManager em=emf.createEntityManager();
+//			LOG.info(">> Concction test correcta Persistencia");
 		} catch (Exception he) {
 			LOG.error(">>Ocurrió un error en la inicialización de la Persistence: " + he);
-			throw new ExceptionInInitializerError(he);
 		}
 	}
 

@@ -11,7 +11,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/WEB-INF/rxp-context.xml</param-value>
+		<param-value>classpath:/META-INF/rxp-context.xml</param-value>
 	</context-param>
 	<context-param>
 		<param-name>javax.faces.CONFIG_FILES</param-name>
@@ -21,27 +21,23 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- <listener>
-		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-	</listener> -->
+	<!-- <listener> <listener-class>com.sun.faces.config.ConfigureListener</listener-class> 
+		</listener> -->
 	<!-- <listener> <listener-class>com.sun.faces.application.WebappLifecycleListener</listener-class> 
 		</listener> -->
 	<!-- servlets -->
-	 <servlet>
+	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
-	</servlet> 
-	<servlet>
-		<servlet-name>Hibernate</servlet-name>
-		<servlet-class>com.rexpress.config.hibernate.persistence.ConfigHibernate</servlet-class>
-		<load-on-startup>2</load-on-startup>
-	</servlet> 
-	<servlet>
+	</servlet>
+	<!-- <servlet> <servlet-name>Hibernate</servlet-name> <servlet-class>com.rexpress.config.hibernate.persistence.ConfigHibernate</servlet-class> 
+		<load-on-startup>2</load-on-startup> </servlet> -->
+	<!-- <servlet>
 		<servlet-name>persistence</servlet-name>
 		<servlet-class>com.rexpress.config.persistence.ConfigPersistence</servlet-class>
-		<load-on-startup>3</load-on-startup>
-	</servlet>
+		<load-on-startup>2</load-on-startup>
+	</servlet> -->
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>
@@ -50,11 +46,8 @@
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.xhtml</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<servlet-name>Prueba</servlet-name>
-		<servlet-class>w_01.ServletPrueba</servlet-class>
-		<load-on-startup>3</load-on-startup>
-	</servlet>
+	<!-- <servlet> <servlet-name>Prueba</servlet-name> <servlet-class>w_01.ServletPrueba</servlet-class> 
+		<load-on-startup>3</load-on-startup> </servlet> -->
 	<error-page>
 		<error-code>500</error-code>
 		<location>/view/errors/500.xhtml</location>
@@ -63,6 +56,14 @@
 		<error-code>404</error-code>
 		<location>/view/errors/404.xhtml</location>
 	</error-page>
+	<filter>
+		<filter-name>filter rexpress</filter-name> <!-- mandatory -->
+		<filter-class>com.rexseguridad.SegurityRexpress</filter-class> <!-- mandatory -->
+	</filter>
+	<filter-mapping>
+		<filter-name>filter rexpress</filter-name> <!-- mandatory -->
+		<url-pattern>/view/*</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+	</filter-mapping>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>

@@ -27,9 +27,6 @@ public class ConfigHibernate implements Servlet {
 		
 		arg0.getServletContext().setAttribute("servlet", "valor servlet");
 		LOG.info(">>Inciado Hibernate Persistencia--> getSessionFactory()");
-		LOG.info(">>Inciado Hibernate Persistencia--> getSessionFactory()");
-		LOG.info(">>Inciado Hibernate Persistencia--> getSessionFactory()");
-		LOG.info(">>Inciado Hibernate Persistencia--> getSessionFactory()");
 		
 		try {
 			

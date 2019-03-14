@@ -13,6 +13,6 @@
  		<property name="connection.pool_size">3</property> 
 <!--    <property name="hbm2ddl.auto">create</property> -->
 <!--    <property name="current_session_context_class">thread</property> -->
-        <mapping class="entity.Usuario"/>
+        <mapping class="com.rexpress.entity.Usuario"/>
 	</session-factory>
 </hibernate-configuration>
