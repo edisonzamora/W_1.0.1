@@ -26,18 +26,17 @@ public class ConfigHibernate implements Servlet {
 	public void init(ServletConfig arg0) throws ServletException {
 		
 		arg0.getServletContext().setAttribute("servlet", "valor servlet");
-		LOG.info(">>Inciado Hibernate Persistencia--> getSessionFactory()");
-		
+		LOG.info(">>>>>>>>>>>>>>>>>>> Inciado Hibernate Persistencia<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 		try {
-			
 			this.sessionFactory = new Configuration().configure().buildSessionFactory();
-			LOG.info(">> Concction test correcta Hibernate Persistencia--> getSessionFactory()");
-			FacesContext cxt = FacesContext.getCurrentInstance();
-			HttpSession session = (HttpSession) cxt.getExternalContext().getSession(false);
-			session.setAttribute("mensaje", "mensaje desde el contexto");
-		} catch (HibernateException he) {
+		LOG.info(">>>>>>>>>>>>>>>>>>> Concction test correcta Hibernate Persistencia<<<<<<<<<<<<<");
+			
+//			FacesContext cxt = FacesContext.getCurrentInstance();
+//			HttpSession session = (HttpSession) cxt.getExternalContext().getSession(false);
+//			session.setAttribute("mensaje", "mensaje desde el contexto");
+		
+		} catch (HibernateException  he) {
 			LOG.error("Ocurrió un error en la inicialización de la SessionFactory: " + he);
-			throw new ExceptionInInitializerError(he);
 		}
 	}
 

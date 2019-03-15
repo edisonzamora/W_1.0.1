@@ -26,6 +26,10 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+			<artifactId>maven-deploy-plugin</artifactId>
+			<version>2.8.2</version>		
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -95,11 +99,11 @@
 			<artifactId>hibernate-commons-annotations</artifactId>
 			<version>5.1.0.Final</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 			<version>1.0.0.Final</version>
-		</dependency>
+		</dependency> -->
 
 
 		<!-- SPRING -->
@@ -135,14 +139,12 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.11.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.26</version>
@@ -151,13 +153,27 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.26</version>
-		</dependency>
+		</dependency> -->
 
 		<!-- mysql connection -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.13</version>
+			<version>8.0.15</version>
+		</dependency> 
+		
+		<!-- JAVA_EE -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>8.0.1-b5</version>
+		</dependency>
+		
+		<!-- JAXB -->
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
 		</dependency>
 	</dependencies>
 </project>
