@@ -20,6 +20,7 @@ public class SegurityRexpress implements Filter {
 		// TODO Auto-generated method stub
 		this.context= filterConfig.getServletContext();
 		this.context.log("SegurityRexpress -->inicializate");
+		
 	}
 
 	@Override
