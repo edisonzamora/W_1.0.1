@@ -17,14 +17,18 @@
 
 	<composite:implementation>
 		<h:form>
-			<h:panelGrid columns="2" id="loginPanel">
+			<h:panelGrid columns="2" id="loginPanel" style="text-align:center ; border:solid 1px ">
             #{cc.attrs.correoNameLabel} : 
             <h:inputText id="correo" value="#{cc.attrs.correoValue}" />
             #{cc.attrs.passNameLabel} : 
             <h:inputSecret id="password" value="#{cc.attrs.passValue}" />
+				<f:facet name="footer">
+					<h:panelGroup style="display:block">
+						<h:commandButton action="#{cc.attrs.botonAction}"
+							value="#{cc.attrs.botonNameLabel}" />
+					</h:panelGroup>
+				</f:facet>
 			</h:panelGrid>
-			<h:commandButton action="#{cc.attrs.botonAction}"
-				value="#{cc.attrs.botonNameLabel}" />
 		</h:form>
 	</composite:implementation>
 </ui:component>

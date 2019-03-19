@@ -5,17 +5,33 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:rpx="http://java.sun.com/jsf/composite/componentes">
-<head>
-<title>#{build.TITULO_APP}</title>
-<style type="text/css">
-</style>
-</head>
+
+<h:head>
+	<title>#{build.TITULO_APP}</title>
+	<style>
+	.panel{
+	width:100%;
+	}
+	</style>
+</h:head>
 <body>
-    <rpx:barraComponet labelTitulo="Login" colorText="" colorBar="#7EB4F7" />
-	<rpx:loginComponet passNameLabel="#{build.label_password}"
-		correoNameLabel="#{build.label_correo}"
-		botonNameLabel="#{build.btn_login}" correoValue="#{loginContollerbean.login.correo}"
-		passValue="#{loginContollerbean.login.password}"
-		botonAction="#{loginContollerbean.aceptar}" />
+	<h:form>
+		<h:panelGrid columns="3" styleClass="panel" border="1" style="text-align:center">
+			<f:facet name="header">
+				<rpx:barraComponet labelTitulo="Login" colorText="bloe"
+					colorBar="#7EB4F7" />
+			</f:facet>
+			<h:graphicImage value="imagenes/candado.jpg"/>
+			<h:panelGroup layout="block">
+			<rpx:loginComponet passNameLabel="#{build.label_password}"
+				correoNameLabel="#{build.label_correo}"
+				botonNameLabel="#{build.btn_login}"
+				correoValue="#{loginContollerbean.login.correo}"
+				passValue="#{loginContollerbean.login.password}"
+				botonAction="#{loginContollerbean.aceptar}"/>
+			</h:panelGroup>
+			<h:graphicImage value="imagenes/candado.jpg"/>
+		</h:panelGrid>
+	</h:form>
 </body>
 </html>
