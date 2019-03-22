@@ -60,11 +60,11 @@
 		<load-on-startup>3</load-on-startup> </servlet> -->
 	<error-page>
 		<error-code>500</error-code>
-		<location>/view/errors/500.xhtml</location>
+		<location>/faces/view/errors/500.xhtml</location>
 	</error-page>
 	<error-page>
 		<error-code>404</error-code>
-		<location>/view/errors/404.xhtml</location>
+		<location>/faces/view/errors/404.xhtml</location>
 	</error-page>
 	<filter>
 		<filter-name>filter rexpress</filter-name> <!-- mandatory -->
@@ -72,7 +72,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>filter rexpress</filter-name> <!-- mandatory -->
-		<url-pattern>/view/*</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+		<url-pattern>/security/*</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
 	</filter-mapping>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
