@@ -22,6 +22,11 @@
 		<param-name>com.sun.faces.enableRestoreView11Compatibility</param-name>
 		<param-value>true</param-value>
 	</context-param>
+	<!-- Load custom tag into JSF web application -->
+  <context-param>
+    <param-name>facelets.LIBRARIES</param-name>
+    <param-value>/WEB-INF/java2s.taglib.xml</param-value>
+  </context-param>
 	<!-- Listeners -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

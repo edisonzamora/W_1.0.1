@@ -16,8 +16,7 @@
 	</composite:interface>
 
 	<composite:implementation>
-		<h:form>
-			<h:panelGrid columns="2" id="loginPanel" style="text-align:center ; border:solid 1px ">
+			<h:panelGrid columns="2" id="loginPanel" style="text-align:center ; border:solid 1px">
             #{cc.attrs.correoNameLabel} : 
             <h:inputText id="correo" value="#{cc.attrs.correoValue}" />
             #{cc.attrs.passNameLabel} : 
@@ -29,6 +28,5 @@
 					</h:panelGroup>
 				</f:facet>
 			</h:panelGrid>
-		</h:form>
 	</composite:implementation>
 </ui:component>

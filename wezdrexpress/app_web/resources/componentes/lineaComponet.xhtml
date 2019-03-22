@@ -5,16 +5,12 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:composite="http://java.sun.com/jsf/composite">
-<composite:interface>
-	<composite:attribute name="labelTitulo" />
-</composite:interface>
+<composite:interface/>
 <composite:implementation>
 	<style>
-.barra-titulo {
-	border-radius: 20px;
-	height: 100%;
-	color: white;
-	text-align: center;
+.linea{
+	border-radius:10px;
+	height:5px;
 	background: rgba(32, 124, 229, 1);
 	background: -moz-linear-gradient(top, rgba(32, 124, 229, 1) 0%,
 		rgba(32, 124, 229, 1) 0%, rgba(7, 104, 209, 1) 0%,
@@ -51,8 +47,6 @@ div h1 {
 	padding: 0%;
 }
 </style>
-	<div class="barra-titulo">
-		<h1>#{cc.attrs.labelTitulo}</h1>
-	</div>
+	<div class="linea"></div>
 </composite:implementation>
 </html>

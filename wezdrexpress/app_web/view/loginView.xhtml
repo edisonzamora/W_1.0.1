@@ -8,29 +8,21 @@
 
 <h:head>
 	<title>#{build.TITULO_APP}</title>
-	<style>
-	.panel{
-	width:100%;
-	}
-	</style>
+	<h:outputStylesheet name="loginstyle.css" library="css"></h:outputStylesheet>
 </h:head>
 <body>
 	<h:form>
-		<h:panelGrid columns="3" styleClass="panel" border="1" style="text-align:center">
+		<h:panelGrid columns="1" styleClass="panel" border="" style="">
 			<f:facet name="header">
-				<rpx:barraComponet labelTitulo="Login" colorText="bloe"
-					colorBar="#7EB4F7" />
+				<rpx:barraComponet labelTitulo="#{build.titulo_iniciar}"/>
 			</f:facet>
-			<h:graphicImage value="imagenes/candado.jpg"/>
-			<h:panelGroup layout="block">
+			<rpx:lineaComponet/>
 			<rpx:loginComponet passNameLabel="#{build.label_password}"
 				correoNameLabel="#{build.label_correo}"
 				botonNameLabel="#{build.btn_login}"
 				correoValue="#{loginContollerbean.login.correo}"
 				passValue="#{loginContollerbean.login.password}"
 				botonAction="#{loginContollerbean.aceptar}"/>
-			</h:panelGroup>
-			<h:graphicImage value="imagenes/candado.jpg"/>
 		</h:panelGrid>
 	</h:form>
 </body>
