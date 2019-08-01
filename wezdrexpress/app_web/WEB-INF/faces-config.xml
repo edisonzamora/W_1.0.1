@@ -11,6 +11,10 @@
 			<base-name>Bundle</base-name>
 			<var>build</var>
 		</resource-bundle>
+		<resource-bundle>
+			<base-name>properties.Messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
 		<locale-config>
 			<default-locale>en</default-locale>
  			<supported-locale>es</supported-locale>

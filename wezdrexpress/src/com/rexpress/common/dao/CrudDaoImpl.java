@@ -9,14 +9,14 @@ import org.springframework.stereotype.Repository;
 @Repository
 public abstract class CrudDaoImpl<ENTITY, PK> implements CrudDao<ENTITY, PK>  {
 
-	protected abstract EntityManager getEntityManager();
+	protected abstract EntityManager getEntityManager() ;
 	
 	public abstract Class<ENTITY> getDaoTypeClass();
 	
 	protected Session getSession() {
-		
 		return (Session) getEntityManager().getDelegate();
 	}
+	
 	protected Query createNamedQuery(String name) {
 		return getEntityManager().createNamedQuery(name);
 	}

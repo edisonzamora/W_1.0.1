@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rpx="http://java.sun.com/jsf/composite/componentes"
+	xmlns:t="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>#{build.TITULO_APP}</title>
+	<h:outputStylesheet name="loginstyle.css" library="css"></h:outputStylesheet>
+	<style type="text/css">
+.table_menu_list {
+	margin: 0 auto;
+}
+</style>
+</h:head>
+<h:body>
+	<f:view locale="#{configapp.idioma}">
+		<h:panelGrid columns="1">
+			<rpx:barraComponet labelTitulo="#{build.titulo_home}" />
+			<p:spacer />
+			<h:panelGrid columns="1" styleClass="panel">
+				<h:panelGrid columns="2">
+					<h:outputText value="Filtrar: " />
+					<p:inputText id="counter" value="">
+						<p:ajax event="keyup" update="out" />
+					</p:inputText>
+					<h:outputText id="out" value="#{listenerView.text}" />
+				</h:panelGrid>
+				<rpx:lineaComponet />
+				<p:panelGrid>
+					<p:row>
+						<p:column colspan="2" style="Width:70%">
+							<p:dataTable var="usu"
+								value="#{homecontrollerbean.listaUsuariosBean}"
+								scrollable="true" scrollHeight="50">
+								<f:facet name="header">#{build.titulo_tabla_usuarios}</f:facet>
+								<p:column headerText="Nombe">
+									<h:outputText value="#{usu.nombre}" />
+								</p:column>
+								<p:column headerText="Apellido">
+									<h:outputText value="#{usu.apellido}" />
+								</p:column>
+								<p:column headerText="Correo">
+									<h:outputText value="#{usu.correo}" />
+								</p:column>
+							</p:dataTable>
+						</p:column>
+						<p:column rowspan="1">
+
+
+
+
+
+
+
+
+
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</h:panelGrid>
+            <h:form>
+			<p:commandLink id="cerrar_session" action="#{homecontrollerbean.cerrarSesion}"
+				style="" value="cerrar" ajax="false" />
+				</h:form>
+
+		</h:panelGrid>
+	</f:view>
+</h:body>
+</html>

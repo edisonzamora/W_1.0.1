@@ -4,6 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:composite="http://java.sun.com/jsf/composite">
 	<composite:interface>
 		<composite:attribute name="correoNameLabel" />
@@ -12,21 +13,30 @@
 		<composite:attribute name="correoValue" />
 		<composite:attribute name="passValue" />
 		<composite:attribute name="botonAction"
-			method-signature="java.lang.String aceptar()" />
+			method-signature="java.lang.String aceptar()"  />
 	</composite:interface>
 
 	<composite:implementation>
-			<h:panelGrid columns="2" id="loginPanel" style="text-align:center ; border:solid 1px">
-            #{cc.attrs.correoNameLabel} : 
-            <h:inputText id="correo" value="#{cc.attrs.correoValue}" />
-            #{cc.attrs.passNameLabel} : 
-            <h:inputSecret id="password" value="#{cc.attrs.passValue}" />
-				<f:facet name="footer">
-					<h:panelGroup style="display:block">
-						<h:commandButton action="#{cc.attrs.botonAction}"
-							value="#{cc.attrs.botonNameLabel}" />
-					</h:panelGroup>
-				</f:facet>
-			</h:panelGrid>
+	<h:form>
+		<p:spacer height="40px" />
+		<h:panelGrid columns="2" id="loginPanel"  cellpadding="5" style="text-align:center ; border:" styleClass="panel_login_compone" >
+			<f:facet name="header">
+				<p:messages id="msg" showDetail="false" closable="true">
+				</p:messages>
+				<p:messages id="msg2" showDetail="false" closable="true">
+				</p:messages>
+			</f:facet>
+			<p:outputLabel id="correolabel" value="#{cc.attrs.correoNameLabel} :" for="correo"/>
+			<p:inputText id="correo" value="#{cc.attrs.correoValue}" required="true" requiredMessage="#{msg.nombre_requerido}"/>
+			<p:outputLabel id="passlabel" value="#{cc.attrs.passNameLabel} :" for="password"/>
+			<p:password id="password" value="#{cc.attrs.passValue}" required="true" requiredMessage="#{msg.password_requerido}"/>
+			<f:facet name="footer">
+				<h:panelGroup style="display:block">
+					<p:commandButton action="#{cc.attrs.botonAction}"
+						value="#{cc.attrs.botonNameLabel}" process="@all" update="loginPanel"/>
+				</h:panelGroup>
+			</f:facet>
+		</h:panelGrid>
+	</h:form>
 	</composite:implementation>
 </ui:component>

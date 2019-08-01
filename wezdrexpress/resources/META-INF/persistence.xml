@@ -10,12 +10,13 @@
   <!--         <provider>org.hibernate.ejb.HibernatePersistence</provider>    -->    
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>  
 
-		<class>com.rexseguridad.Usuario</class>
+		<class>com.rexssecurity.entitys.Usuario</class>
+		
 
 		<properties>
 	   <!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test?serverTimezone=UTC" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password" value="" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />

@@ -1,4 +1,4 @@
-package com.rexseguridad;
+package com.rexssecurity.entitys;
 
 import java.io.Serializable;
 
@@ -12,12 +12,16 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.rexssecurity.Role;
+
 @Entity
 @Table(name = "usuario")
 @XmlRootElement
 @NamedQueries({
 		@NamedQuery(name = "Usuario.findById", query = "SELECT u FROM Usuario u WHERE u.idusuario = :idusuario"),
-		@NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo")
+		@NamedQuery(name = "Usuario.findByCorreo", query = "SELECT u FROM Usuario u WHERE u.correo = :correo"),
+		@NamedQuery(name = "Usuario.findByRole", query = "SELECT u FROM Usuario u WHERE u.role = :role")
+
 })
 public class Usuario implements Serializable {
 
@@ -42,7 +46,7 @@ public class Usuario implements Serializable {
 	@Column(name = "activo")
 	private Integer activo;
 
-	@Column(name = "tipo")
+	@Column(name = "role")
 	@Enumerated(EnumType.STRING)
 	private Role role;
 	

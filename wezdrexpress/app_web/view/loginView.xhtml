@@ -4,6 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:rpx="http://java.sun.com/jsf/composite/componentes">
 
 <h:head>
@@ -11,19 +12,25 @@
 	<h:outputStylesheet name="loginstyle.css" library="css"></h:outputStylesheet>
 </h:head>
 <body>
-	<h:form>
-		<h:panelGrid columns="1" styleClass="panel" border="" style="">
-			<f:facet name="header">
+	<f:view locale="#{configapp.idioma}">
+		<!-- <f:view locale="es"> -->
+	#{msg.version_idioma}
+			<h:panelGrid columns="1" styleClass="panel" id="logingrid">
+				<!-- <f:facet name="header">
 				<rpx:barraComponet labelTitulo="#{build.titulo_iniciar}"/>
-			</f:facet>
-			<rpx:lineaComponet/>
-			<rpx:loginComponet passNameLabel="#{build.label_password}"
-				correoNameLabel="#{build.label_correo}"
-				botonNameLabel="#{build.btn_login}"
-				correoValue="#{loginContollerbean.login.correo}"
-				passValue="#{loginContollerbean.login.password}"
-				botonAction="#{loginContollerbean.aceptar}"/>
-		</h:panelGrid>
-	</h:form>
+			</f:facet> -->
+				<rpx:lineaComponet />
+				<rpx:loginComponet passNameLabel="#{build.label_password}"
+					correoNameLabel="#{build.label_correo}"
+					botonNameLabel="#{build.btn_login}"
+					correoValue="#{logincontrollerbean.login.correo}"
+					passValue="#{logincontrollerbean.login.password}"
+					botonAction="#{logincontrollerbean.aceptar}" />
+				<!-- <p:selectOneMenu id="console" value="ññññ" >
+					<f:selectItem itemLabel="Español" itemValue="es" />
+					<f:selectItem itemLabel="Ingles" itemValue="en" />
+				</p:selectOneMenu> -->
+			</h:panelGrid>
+	</f:view>
 </body>
 </html>

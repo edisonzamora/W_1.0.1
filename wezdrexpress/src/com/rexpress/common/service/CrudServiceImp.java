@@ -7,7 +7,7 @@ public  abstract class CrudServiceImp<ENTITY, PK> implements CrudService<ENTITY,
 	protected abstract CrudDao <ENTITY, PK> getCrudDao();
 
 	@Override
-	public void create(ENTITY entity) throws Exception {
+	public void createCrudService(ENTITY entity) throws Exception {
 		getCrudDao().create(entity);
 	}
 }

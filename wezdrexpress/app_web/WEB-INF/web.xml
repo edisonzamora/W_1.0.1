@@ -11,7 +11,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:/META-INF/rxp-context.xml</param-value>
+		<param-value>classpath:/META-INF/spring/*-context.xml</param-value>
 	</context-param>
 	<context-param>
 		<param-name>javax.faces.CONFIG_FILES</param-name>
@@ -23,16 +23,16 @@
 		<param-value>true</param-value>
 	</context-param>
 	<!-- Load custom tag into JSF web application -->
-  <context-param>
+  <!-- <context-param>
     <param-name>facelets.LIBRARIES</param-name>
     <param-value>/WEB-INF/java2s.taglib.xml</param-value>
-  </context-param>
+  </context-param> -->
 	<!-- Listeners -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	<!-- <listener> <listener-class>com.sun.faces.config.ConfigureListener</listener-class> 
-		</listener> -->
+	<listener> <listener-class>com.sun.faces.config.ConfigureListener</listener-class> 
+		</listener> 
 	<!-- <listener> <listener-class>com.sun.faces.application.WebappLifecycleListener</listener-class> 
 		</listener> -->
 	<!-- servlets -->
@@ -68,11 +68,11 @@
 	</error-page>
 	<filter>
 		<filter-name>filter rexpress</filter-name> <!-- mandatory -->
-		<filter-class>com.rexseguridad.SegurityRexpress</filter-class> <!-- mandatory -->
+		<filter-class>com.rexssecurity.SecurityRexpress</filter-class> <!-- mandatory -->
 	</filter>
 	<filter-mapping>
 		<filter-name>filter rexpress</filter-name> <!-- mandatory -->
-		<url-pattern>/security/*</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
+		<url-pattern>/faces/view/security/*</url-pattern> <!-- either url-pattern or servlet-name is mandatory -->
 	</filter-mapping>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
